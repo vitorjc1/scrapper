@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Scraper = void 0;
 const Helper_1 = require("../helpers/Helper");
 const cheerio = __importStar(require("cheerio"));
+const fs = __importStar(require("fs"));
 class Scraper {
     constructor(pagina, browser, category) {
         this.$ = pagina;
@@ -38,8 +39,9 @@ class Scraper {
         let productsArray = products.toArray();
         console.log(products.length);
         let data = [];
-        const fs = require('fs');
         for (const i of productsArray.keys()) {
+            if (i == 3)
+                break;
             let newPage = await this.browser.newPage();
             let url = (_a = products.eq(i).find(".css-1pc1srv-ItemCardHoverProvider").eq(0).find("a").first().attr('href')) === null || _a === void 0 ? void 0 : _a.toString();
             await newPage.goto('https://instacart.ca' + url);
@@ -55,10 +57,16 @@ class Scraper {
             data.push(obj);
             newPage.close();
         }
-        fs.appendFile('./output.json', JSON.stringify(data), function (err) {
-            if (err)
-                throw err;
+        let results = [];
+        let document = fs.readFileSync('./output.json', {
+            encoding: 'utf8',
         });
+        if (document != '') {
+            results = JSON.parse(document);
+        }
+        results.push(...data);
+        console.log(results);
+        fs.writeFileSync('./output.json', JSON.stringify(results));
         return data;
     }
 }

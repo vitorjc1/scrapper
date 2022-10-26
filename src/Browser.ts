@@ -1,5 +1,5 @@
-import { FloralCategories, Types, ProduceCategories } from './helpers/Categories';
-import { FloralUrls, ProduceUrls } from './helpers/Urls';
+import { FloralCategories, Types, ProduceCategories, BakeryCategories, BakingEssentialsCategories, BeverageCategories, BreakfastCategories } from './helpers/Categories';
+import { FloralUrls, ProduceUrls, BakeryUrl, BakingEssentialsUrls, BeveragesUrls, BreakfastUrls } from './helpers/Urls';
 import { Query } from './Querys/Query';
 import { Scraper } from './Scrapers/Scraper';
 import { Browser, Page } from "puppeteer";
@@ -66,6 +66,31 @@ export class Brwser{
                 await this.query.getData(this.page,this.browser!, Object.values(ProduceUrls)[i], Object.values(ProduceCategories)[i]);
               }
               break;
+
+            case Types.Bakery:
+              for(let i = 0; i < Object.keys(BakeryCategories).length; i++){
+                await this.query.getData(this.page,this.browser!, Object.values(BakeryUrl)[i], Object.values(BakeryCategories)[i]);
+              }
+              break;
+              
+            case Types.BakingEssentials:
+                for(let i = 0; i < Object.keys(BakingEssentialsCategories).length; i++){
+                  await this.query.getData(this.page,this.browser!, Object.values(BakingEssentialsUrls)[i], Object.values(BakingEssentialsCategories)[i]);
+                }
+              break;
+
+            case Types.Beverage:
+              for(let i = 0; i < Object.keys(BeverageCategories).length; i++){
+                await this.query.getData(this.page,this.browser!, Object.values(BeveragesUrls)[i], Object.values(BeverageCategories)[i]);
+              }
+              break;
+
+            case Types.Breakfast:
+              for(let i = 0; i < Object.keys(BreakfastCategories).length; i++){
+                await this.query.getData(this.page,this.browser!, Object.values(BreakfastUrls)[i], Object.values(BreakfastCategories)[i]);
+              }
+              break;
+
           }
         }catch(error: any){
             throw error;

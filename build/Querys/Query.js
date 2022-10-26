@@ -25,13 +25,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Query = void 0;
 const Scraper_1 = require("./../Scrapers/Scraper");
-const FloralQuery_1 = require("./FloralQuery");
 const Helper_1 = require("./../helpers/Helper");
 const cheerio = __importStar(require("cheerio"));
 class Query {
-    constructor() {
-        this.floralQuery = new FloralQuery_1.FloralQuery();
-    }
     async start(page) {
         await page.goto("https://www.instacart.ca/store/real-canadian-superstore/storefront");
         if (await page.$("#streetAddress") !== null) {

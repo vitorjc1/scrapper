@@ -53,12 +53,32 @@ class Brwser {
             switch (type) {
                 case Categories_1.Types.Floral:
                     for (let i = 0; i < Object.keys(Categories_1.FloralCategories).length; i++) {
-                        await this.query.floralQuery.getData(this.page, this.browser, Object.values(Urls_1.FloralUrls)[i], Object.values(Categories_1.FloralCategories)[i]);
+                        await this.query.getData(this.page, this.browser, Object.values(Urls_1.FloralUrls)[i], Object.values(Categories_1.FloralCategories)[i]);
                     }
                     break;
                 case Categories_1.Types.Produce:
                     for (let i = 0; i < Object.keys(Categories_1.ProduceCategories).length; i++) {
                         await this.query.getData(this.page, this.browser, Object.values(Urls_1.ProduceUrls)[i], Object.values(Categories_1.ProduceCategories)[i]);
+                    }
+                    break;
+                case Categories_1.Types.Bakery:
+                    for (let i = 0; i < Object.keys(Categories_1.BakeryCategories).length; i++) {
+                        await this.query.getData(this.page, this.browser, Object.values(Urls_1.BakeryUrl)[i], Object.values(Categories_1.BakeryCategories)[i]);
+                    }
+                    break;
+                case Categories_1.Types.BakingEssentials:
+                    for (let i = 0; i < Object.keys(Categories_1.BakingEssentialsCategories).length; i++) {
+                        await this.query.getData(this.page, this.browser, Object.values(Urls_1.BakingEssentialsUrls)[i], Object.values(Categories_1.BakingEssentialsCategories)[i]);
+                    }
+                    break;
+                case Categories_1.Types.Beverage:
+                    for (let i = 0; i < Object.keys(Categories_1.BeverageCategories).length; i++) {
+                        await this.query.getData(this.page, this.browser, Object.values(Urls_1.BeveragesUrls)[i], Object.values(Categories_1.BeverageCategories)[i]);
+                    }
+                    break;
+                case Categories_1.Types.Breakfast:
+                    for (let i = 0; i < Object.keys(Categories_1.BreakfastCategories).length; i++) {
+                        await this.query.getData(this.page, this.browser, Object.values(Urls_1.BreakfastUrls)[i], Object.values(Categories_1.BreakfastCategories)[i]);
                     }
                     break;
             }

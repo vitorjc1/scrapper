@@ -142,9 +142,86 @@ export enum CondimentsSaucesCategories{
     MoreCondimentsSauces = 'More Condiments & Sauces',
 }
 
+export enum CannedGoodsSoupsCategories{
+    CannedTomatoes = 'Canned Tomatoes',
+    CannedCoconut = 'Canned Coconut',
+    Soups = 'Soups',
+    CannedBeans = 'Canned Beans',
+    CannedMeat = 'Canned Meat',
+    CannedFish = 'Canned Fish',
+    CannedMeals = 'Canned Meals',
+    CannedFruits = 'Canned Fruits',
+    BrothsStocks = 'Broths & Stocks',
+    CannedVegetables = 'Canned Vegetables',
+}
+
+export enum BreakfastCategories{
+    NutButters = 'Nut Butters',
+    BreakfastBars = 'Breakfast Bars',
+    Oatmeal = 'Oatmeal',
+    PancakeWaffleMix = 'Pancake & Waffle Mix',
+    Granola = 'Granola',
+    MapleSyrup = 'Maple Syrup',
+    JamsJellies = 'Jams & Jellies',
+    ToasterPastries = 'Toaster Pastries',
+    Cereal = 'Cereal'
+}
+
+export enum HouseholdCategories{
+    PaperGoods = 'Paper Goods',
+    CleaningSolutions = 'Cleaning Solutions',
+    Laundry = 'Laundry',
+    FoilPlasticWrap = 'Foil & Plastic Wrap',
+    TrashBinsBags = 'Trash Bins & Bags',
+    CandlesAirFresheners = 'Candles & Air Fresheners',
+    CleaningTools = 'Cleaning Tools',
+    Housewares = 'Housewares',
+    PestControl = 'Pest Control'
+}
+
+export enum BakingEssentialsCategories{
+    BakingMixes = 'Baking Mixes',
+    FrostingCakeDecorations = 'Frosting & Cake Decorations',
+    BakingMilks = 'Baking Milks',
+    BakingChocolatesMorsels = 'Baking Chocolates & Morsels',
+    Flours = 'Flours',
+    HoneySyrupSweeteners = 'Honey, Syrup, & Sweeteners',
+    BakingPowders = 'Baking Powders',
+    PieCrustsFillings = 'Pie Crusts & Fillings',
+    Extracts = 'Extracts',
+    Sugars = 'Sugars',
+    IceCreamCones = 'Ice Cream Cones',
+    Doughs = 'Doughs',
+    Marshmallows = 'Marshmallows',
+}
+
+export enum OilsVinegarsSpicesUrls{
+    SpicesSeasoning = 'Spices & Seasoning',
+    BreadCrumbs = 'Bread Crumbs',
+    Boullions = 'Boullions',
+    SaltPepper = 'Salt & Pepper',
+    CookingOils = 'Cooking Oils',
+    Vinegar = 'Vinegar',
+    Marinades = 'Marinades'
+}
+
 export enum Types{
     Floral = 'Floral',
     Produce = 'Produce',
-    DairyEggs = 'DairyEggs'
+    DairyEggs = 'DairyEggs',
+    Beverage = 'Beverage',
+    MeatSeadfood = 'MeatSeadfood',
+    ChocolatyCandy = 'ChocolatyCandy',
+    FrozenPizzasMeals = 'FrozenPizzasMeals',
+    Bakery = 'Bakery',
+    PreparedFoods = 'PreparedFoods',
+    Deli = 'Deli',
+    DryGoodsPasta = 'DryGoodsPasta',
+    CondimentsSauces = 'CondimentsSauces',
+    CannedGoodsSoups = 'CannedGoodsSoups',
+    Breakfast = 'Breakfast',
+    Household = 'Household',
+    BakingEssentials = 'BakingEssentials',
+    OilsVinegarsSpices = 'OilsVinegarsSpices'
 }
 

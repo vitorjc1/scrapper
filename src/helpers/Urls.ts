@@ -141,3 +141,66 @@ export enum CondimentsSaucesUrls{
     HorseradishWasabi = 'https://www.instacart.ca/store/real-canadian-superstore/collections/horseradish-wasabi',
     MoreCondimentsSauces = 'https://www.instacart.ca/store/real-canadian-superstore/collections/other-sauces',
 }
+
+export enum CannedGoodsSoupsUrls{
+    CannedTomatoes = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-tomatoes',
+    CannedCoconut = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-coconut',
+    Soups = 'https://www.instacart.ca/store/real-canadian-superstore/collections/soups',
+    CannedBeans = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-beans',
+    CannedMeat = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-meat',
+    CannedFish = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-fish',
+    CannedMeals = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-meals',
+    CannedFruits = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-fruits',
+    BrothsStocks = 'https://www.instacart.ca/store/real-canadian-superstore/collections/broths-and-stocks',
+    CannedVegetables = 'https://www.instacart.ca/store/real-canadian-superstore/collections/canned-vegetables',
+}
+
+export enum BreakfastUrls{
+    NutButters = 'https://www.instacart.ca/store/real-canadian-superstore/collections/nut-butters',
+    BreakfastBars = 'https://www.instacart.ca/store/real-canadian-superstore/collections/breakfast-bars',
+    Oatmeal = 'https://www.instacart.ca/store/real-canadian-superstore/collections/oatmeal',
+    PancakeWaffleMix = 'https://www.instacart.ca/store/real-canadian-superstore/collections/pancake-waffle',
+    Granola = 'https://www.instacart.ca/store/real-canadian-superstore/collections/granola',
+    MapleSyrup = 'https://www.instacart.ca/store/real-canadian-superstore/collections/maple-syrup',
+    JamsJellies = 'https://www.instacart.ca/store/real-canadian-superstore/collections/fruit-preserves',
+    ToasterPastries = 'https://www.instacart.ca/store/real-canadian-superstore/collections/toaster-pastries',
+    Cereal = 'https://www.instacart.ca/store/real-canadian-superstore/collections/634-cereal'
+}
+
+export enum HouseholdUrls{
+    PaperGoods = 'https://www.instacart.ca/store/real-canadian-superstore/collections/paper-goods',
+    CleaningSolutions = 'https://www.instacart.ca/store/real-canadian-superstore/collections/cleaning-solutions',
+    Laundry = 'https://www.instacart.ca/store/real-canadian-superstore/collections/laundry',
+    FoilPlasticWrap = 'https://www.instacart.ca/store/real-canadian-superstore/collections/foil-plastic',
+    TrashBinsBags = 'https://www.instacart.ca/store/real-canadian-superstore/collections/trash-bins-bags',
+    CandlesAirFresheners = 'https://www.instacart.ca/store/real-canadian-superstore/collections/candles-air-fresheners',
+    CleaningTools = 'https://www.instacart.ca/store/real-canadian-superstore/collections/cleaning-tools',
+    Housewares = 'https://www.instacart.ca/store/real-canadian-superstore/collections/housewares',
+    PestControl = 'https://www.instacart.ca/store/real-canadian-superstore/collections/589-pest-control'
+}
+
+export enum BakingEssentialsUrls{
+    BakingMixes = 'https://www.instacart.ca/store/real-canadian-superstore/collections/baking-mixes',
+    FrostingCakeDecorations = 'https://www.instacart.ca/store/real-canadian-superstore/collections/cake-decoratings',
+    BakingMilks = 'https://www.instacart.ca/store/real-canadian-superstore/collections/baking-milks',
+    BakingChocolatesMorsels = 'https://www.instacart.ca/store/real-canadian-superstore/collections/baking-chocolates-morsels',
+    Flours = 'https://www.instacart.ca/store/real-canadian-superstore/collections/flours',
+    HoneySyrupSweeteners = 'https://www.instacart.ca/store/real-canadian-superstore/collections/honey-syrup-sweetners',
+    BakingPowders = 'https://www.instacart.ca/store/real-canadian-superstore/collections/baking-powders',
+    PieCrustsFillings = 'https://www.instacart.ca/store/real-canadian-superstore/collections/pie-crusts',
+    Extracts = 'https://www.instacart.ca/store/real-canadian-superstore/collections/extracts',
+    Sugars = 'https://www.instacart.ca/store/real-canadian-superstore/collections/sugars',
+    IceCreamCones = 'https://www.instacart.ca/store/real-canadian-superstore/collections/ice-cream-cones',
+    Doughs = 'https://www.instacart.ca/store/real-canadian-superstore/collections/refrigerated-doughs',
+    Marshmallows = 'https://www.instacart.ca/store/real-canadian-superstore/collections/marshmallows',
+}
+
+export enum OilsVinegarsSpicesUrls{
+    SpicesSeasoning = 'https://www.instacart.ca/store/real-canadian-superstore/collections/spices',
+    BreadCrumbs = 'https://www.instacart.ca/store/real-canadian-superstore/collections/bread-crumbs',
+    Boullions = 'https://www.instacart.ca/store/real-canadian-superstore/collections/boullions',
+    SaltPepper = 'https://www.instacart.ca/store/real-canadian-superstore/collections/salt-pepper',
+    CookingOils = 'https://www.instacart.ca/store/real-canadian-superstore/collections/cooking-oils',
+    Vinegar = 'https://www.instacart.ca/store/real-canadian-superstore/collections/vinegar',
+    Marinades = 'https://www.instacart.ca/store/real-canadian-superstore/collections/marinades'
+}

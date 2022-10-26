@@ -26,4 +26,5 @@ export class Query{
         let scraper = new Scraper(cheerio.load(await page.content()), browser, category);
         await scraper.getProducts();
   }
+  
 }
