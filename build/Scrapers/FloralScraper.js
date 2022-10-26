@@ -27,14 +27,16 @@ exports.FloralScraper = void 0;
 const Helper_1 = require("../helpers/Helper");
 const cheerio = __importStar(require("cheerio"));
 class FloralScraper {
-    constructor(pagina, browser) {
+    constructor(pagina, browser, category) {
         this.$ = pagina;
         this.browser = browser;
+        this.category = category;
     }
     async getProducts() {
-        var _a;
-        let products = this.$(".css-z4hfda").children('div').last().children('div').last().find('.css-1381xmv-ItemsGridWithPostAtcRecommendations').eq(0).find('ul').eq(0).find('li');
+        var _a, _b;
+        let products = this.$(".css-z4hfda").eq(0).find(".css-1bfgc1k").eq(0).find('.css-1381xmv-ItemsGridWithPostAtcRecommendations').eq(0).find('ul').eq(0).find('li');
         let productsArray = products.toArray();
+        console.log(products.length);
         let data = [];
         const fs = require('fs');
         for (const i of productsArray.keys()) {
@@ -43,19 +45,20 @@ class FloralScraper {
             await newPage.goto('https://instacart.ca' + url);
             await Helper_1.Helper.waitTillHTMLRendered(newPage);
             let $2 = cheerio.load(await newPage.content());
-            // let imageURL = $2(".ic-image-zoomer").eq(0).find('img').eq(0).attr('src')?.toString()!;
-            // let imageBase64 = await this.getImageBase64(imageURL);
             let obj = {
-                ProductName: $2(".css-16ptqna").eq(0).text(),
+                Name: $2(".css-16ptqna").eq(0).text(),
                 Price: $2(".css-1u4ofbf").eq(0).find('span').eq(0).text(),
                 Details: $2(".css-kxnfom").eq(0).text(),
-                // Image: imageBase64,
-                Category: 'Floral'
+                Image: (_b = $2(".ic-image-zoomer").eq(0).find('img').eq(0).attr('src')) === null || _b === void 0 ? void 0 : _b.toString(),
+                Category: this.category
             };
             data.push(obj);
             newPage.close();
         }
-        fs.writeFileSync('./output.json', JSON.stringify(data));
+        fs.appendFile('./output.json', JSON.stringify(data), function (err) {
+            if (err)
+                throw err;
+        });
         return data;
     }
     async getImageBase64(imageURL) {

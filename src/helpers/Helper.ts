@@ -64,7 +64,7 @@ export class Helper{
                       clearInterval(timer);
                       resolve();
                   }
-              }, 100);
+              }, 200);
           });
       });
     }

@@ -28,11 +28,11 @@ const Helper_1 = require("./../helpers/Helper");
 const FloralScraper_1 = require("../Scrapers/FloralScraper");
 const cheerio = __importStar(require("cheerio"));
 class FloralQuery {
-    async getData(page, browser) {
-        await page.goto("https://www.instacart.ca/store/real-canadian-superstore/collections/floral");
+    async getData(page, browser, url, category) {
+        await page.goto(url);
         await Helper_1.Helper.waitTillHTMLRendered(page);
         await Helper_1.Helper.autoScroll(page);
-        let scraper = new FloralScraper_1.FloralScraper(cheerio.load(await page.content()), browser);
+        let scraper = new FloralScraper_1.FloralScraper(cheerio.load(await page.content()), browser, category);
         await scraper.getProducts();
     }
 }

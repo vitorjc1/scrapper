@@ -23,34 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Query = void 0;
-const Scraper_1 = require("./../Scrapers/Scraper");
-const FloralQuery_1 = require("./FloralQuery");
+exports.ProduceQuery = void 0;
 const Helper_1 = require("./../helpers/Helper");
+const FloralScraper_1 = require("../Scrapers/FloralScraper");
 const cheerio = __importStar(require("cheerio"));
-class Query {
-    constructor() {
-        this.floralQuery = new FloralQuery_1.FloralQuery();
-    }
-    async start(page) {
-        await page.goto("https://www.instacart.ca/store/real-canadian-superstore/storefront");
-        if (await page.$("#streetAddress") !== null) {
-            await page.type("#streetAddress", "850 11 Street SW");
-            await Helper_1.Helper.waitTillHTMLRendered(page);
-            await Helper_1.Helper.sleep(2000);
-            await page.click(".css-y9wxcl-AddressSuggestionList > li:nth-child(1) > div", { delay: 400 });
-            await Helper_1.Helper.waitTillHTMLRendered(page);
-            await Helper_1.Helper.sleep(1000);
-            await page.click(".css-1ohhyoe", { delay: 300 });
-            await Helper_1.Helper.sleep(2000);
-        }
-    }
+class ProduceQuery {
     async getData(page, browser, url, category) {
         await page.goto(url);
         await Helper_1.Helper.waitTillHTMLRendered(page);
         await Helper_1.Helper.autoScroll(page);
-        let scraper = new Scraper_1.Scraper(cheerio.load(await page.content()), browser, category);
+        let scraper = new FloralScraper_1.FloralScraper(cheerio.load(await page.content()), browser, category);
         await scraper.getProducts();
     }
 }
-exports.Query = Query;
+exports.ProduceQuery = ProduceQuery;

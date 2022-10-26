@@ -23,20 +23,18 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Scraper = void 0;
+exports.FloralScraper = void 0;
 const Helper_1 = require("../helpers/Helper");
 const cheerio = __importStar(require("cheerio"));
-class Scraper {
-    constructor(pagina, browser, category) {
+class FloralScraper {
+    constructor(pagina, browser) {
         this.$ = pagina;
         this.browser = browser;
-        this.category = category;
     }
     async getProducts() {
         var _a, _b;
-        let products = this.$(".css-z4hfda").eq(0).find(".css-1bfgc1k").eq(0).find('.css-1381xmv-ItemsGridWithPostAtcRecommendations').eq(0).find('ul').eq(0).find('li');
+        let products = this.$(".css-z4hfda").children('div').last().children('div').last().find('.css-1381xmv-ItemsGridWithPostAtcRecommendations').eq(0).find('ul').eq(0).find('li');
         let productsArray = products.toArray();
-        console.log(products.length);
         let data = [];
         const fs = require('fs');
         for (const i of productsArray.keys()) {
@@ -50,16 +48,20 @@ class Scraper {
                 Price: $2(".css-1u4ofbf").eq(0).find('span').eq(0).text(),
                 Details: $2(".css-kxnfom").eq(0).text(),
                 Image: (_b = $2(".ic-image-zoomer").eq(0).find('img').eq(0).attr('src')) === null || _b === void 0 ? void 0 : _b.toString(),
-                Category: this.category
+                Category: 'Floral'
             };
             data.push(obj);
             newPage.close();
         }
-        fs.appendFile('./output.json', JSON.stringify(data), function (err) {
-            if (err)
-                throw err;
-        });
+        fs.writeFileSync('./output.json', JSON.stringify(data));
         return data;
     }
+    async getImageBase64(imageURL) {
+        let imagePage = await this.browser.newPage();
+        await imagePage.goto(imageURL);
+        const imageBase64 = await imagePage.screenshot({ encoding: "base64" });
+        await imagePage.close();
+        return imageBase64;
+    }
 }
-exports.Scraper = Scraper;
+exports.FloralScraper = FloralScraper;

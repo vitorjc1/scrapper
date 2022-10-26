@@ -7,18 +7,14 @@ export class FloralScraper{
 
     public $!: cheerio.Root;
     public browser: Browser;
-    public category: string;
-
-    constructor(pagina: cheerio.Root, browser: Browser, category: string) {
+    constructor(pagina: cheerio.Root, browser: Browser) {
         this.$ = pagina;
         this.browser = browser;
-        this.category = category;
     }
 
     async getProducts(){
-        let products = this.$(".css-z4hfda").eq(0).find(".css-1bfgc1k").eq(0).find('.css-1381xmv-ItemsGridWithPostAtcRecommendations').eq(0).find('ul').eq(0).find('li');
+        let products = this.$(".css-z4hfda").children('div').last().children('div').last().find('.css-1381xmv-ItemsGridWithPostAtcRecommendations').eq(0).find('ul').eq(0).find('li');
         let productsArray = products.toArray();
-        console.log(products.length);
         let data: any[] = [];
         const fs = require('fs');
         for(const i of productsArray.keys()){
@@ -33,14 +29,12 @@ export class FloralScraper{
                 Price: $2(".css-1u4ofbf").eq(0).find('span').eq(0).text(),
                 Details: $2(".css-kxnfom").eq(0).text(),
                 Image: $2(".ic-image-zoomer").eq(0).find('img').eq(0).attr('src')?.toString()!,
-                Category: this.category
+                Category: 'Floral'
             }
             data.push(obj);
             newPage.close();
         }
-        fs.appendFile('./output.json',  JSON.stringify(data), function (err:any) {
-            if (err) throw err;
-          });
+        fs.writeFileSync('./output.json', JSON.stringify(data));
         return data;
     }
 
